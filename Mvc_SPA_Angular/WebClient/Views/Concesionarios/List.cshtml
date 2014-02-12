@@ -1,0 +1,23 @@
+﻿<br />
+<header>
+    <h1>@Resources.Language.Title_List</h1>
+</header>
+
+<section class="dataContent" data-ng-controller="ListaCtrl" >
+
+    <div data-ng-show="!loading">
+        <ul>
+            <li data-ng-repeat="item in list">
+                <h3>{{item.Nombre }} - Concesionario {{ item.Marca }}</h3>
+                <div data-ng-repeat="coche in item.Coches">
+                    <a href="#/detalle/{{coche.IdCoche}}">{{ coche.Marca}}- {{coche.Modelo}}</a>
+                    @if (Request.IsAuthenticated)
+                    {
+                        <button class="btn btn-mini" data-ng-click="edit(coche.IdCoche)"><i class="icon-edit"></i></button>
+                    }
+                  </div>
+            </li>
+        </ul>
+        <p class="error" data-ng-show="error">{{ error }}</p>
+    </div>
+</section>

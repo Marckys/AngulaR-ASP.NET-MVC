@@ -1,0 +1,47 @@
+﻿<br />
+<header>
+    <h1>@Resources.Language.Title_Edit</h1>
+</header>
+
+<section data-ng-controller="EditCtrl">
+
+
+    @Html.Partial("Progress")
+
+    <div data-ng-show="!loading" data-ng-animate="'animate'">
+        <form class="form-horizontal">
+            <div class="control-group">
+                <label class="control-label" for="inputModelo">Modelo</label>
+                <div class="controls">
+                    <input type="text" id="inputModelo" placeholder="Modelo" data-ng-model="coche.Modelo">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputYear" required>Año</label>
+                <div class="controls">
+                    <input type="text" id="inputYear" placeholder="Año" data-ng-model="coche.Fecha">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputPrecio">Precio</label>
+                <div class="controls">
+                    <input type="text" id="inputPrecio" data-ng-model="coche.Precio" placeholder="0.00">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="inputDetalle">Detalle</label>
+                <div class="controls">
+                    <input type="text" id="inputDetalle" placeholder="Detalle" data-ng-model="coche.Descripcion">
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="controls">
+                    <button type="submit" class="btn" data-ng-click="update(coche)">Guardar</button>
+                    <button type="submit" class="btn" data-ng-click="volver()">Cancelar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+</section>

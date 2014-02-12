@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Demo ASP.NET MVC & AngularJs";
+}
+@section featured {
+    <header>
+        <h1>@ViewBag.Title</h1>
+    </header>
+}
+<div id="main-content">
+    <div class="bodyPartialView" data-ng-view=""></div>
+    <!-- The SPA Views go here -->
+</div>

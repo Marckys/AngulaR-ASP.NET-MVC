@@ -1,0 +1,31 @@
+﻿<br />
+<header>
+    <h1>@Resources.Language.Title_Detail</h1>
+</header>
+
+<section class="dataContent" data-ng-controller="DetalleCtrl">
+    
+     @Html.Partial("Progress")
+
+    <div data-ng-show="!loading" data-ng-animate="'animate'">
+        <section class="media">
+            <div class="pull-left">
+                <img data-ng-src="{{ coche.Foto }}" alt="foto" />
+            </div>
+            <div class="media-body">
+                <h3 data-ng-model="Id">{{ coche.Marca }}</h3>
+                <ul>
+                    <li>Modelo: {{ coche.Modelo }}</li>
+                    <li>Año: {{ coche.Fecha }}</li>
+                    <li>Precio: {{ coche.Precio }}</li>
+                    <li>Detalle: {{ coche.Descripcion }}</li>
+                </ul>
+                <div class="controls">
+                    <button type="submit" class="btn" ng-click="volver()">Volver</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <br />
+</section>
+
