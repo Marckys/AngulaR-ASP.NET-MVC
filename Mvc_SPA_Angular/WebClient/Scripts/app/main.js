@@ -2,14 +2,16 @@
 
 
 demoApp = angular.module('demoApp', [])
-    .config(['$routeProvider', function($routeProvider) {
+    .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/', {
                 templateUrl: '/Concesionarios/List',
                 controller: 'ListaCtrl'
             })
             .when('/detalle/:id', {
-                templateUrl: '/Concesionarios/Detail',
+                templateUrl: function (parameter) {
+                    return '/Concesionarios/Detail/' + parameter.id;
+                },
                 controller: 'DetalleCtrl'
             })
             .when('/edit/:id', {
